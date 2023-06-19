@@ -53,15 +53,16 @@ const moviesController = {
                 res.json(RESPONSE)
             });
     },
-    create: async (req, res) => {
+    addMovie: async (req, res) => {
         try {
+            // return console.log(req.body);
             let newMovie = await Movies.create({ ...req.body })
 
             return res.status(200).json({
                 meta: {
                     status: 200,
                     msg: "Movie added correctly",
-                    endpoint: `/api/movies/${movie.id}`
+                    endpoint: `/api/movies/${newMovie.id}`
                 },
                 newMovie,
             })

@@ -5,7 +5,7 @@ const moviesController = require('../../controllers/api/moviesController');
 router
     .get('/api/movies', moviesController.list)
     .get('/api/movies/details/:id', moviesController.detail)
-    .post('/api/movies/create', moviesController.create)
+    .post('/api/movies/create', moviesController.addMovie)
     .delete('/api/movies/delete/:id', moviesController.destroy)
 
 module.exports = router;
